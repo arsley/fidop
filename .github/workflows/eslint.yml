@@ -1,0 +1,13 @@
+name: Run eslint
+
+on: push
+
+jobs:
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: yarn
+    - name: Run eslint
+      run: yarn lint
