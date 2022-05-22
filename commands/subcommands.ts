@@ -1,6 +1,7 @@
-const { SlashCommand, CommandOptionType } = require('slash-create');
-module.exports = class SubcommandsCommand extends SlashCommand {
-  constructor(creator) {
+import { SlashCommand, SlashCreator, CommandContext, CommandOptionType } from 'slash-create';
+
+export default class SubcommandsCommand extends SlashCommand {
+  constructor(creator: SlashCreator) {
     super(creator, {
       name: 'subcommands',
       description: 'Make a command with subcommands',
@@ -45,7 +46,7 @@ module.exports = class SubcommandsCommand extends SlashCommand {
     });
     this.filePath = __filename;
   }
-  async run(ctx) {
+  async run(ctx: CommandContext) {
     // returns the subcommand, option, and option value
     const returnStringValues = [ctx.subcommands[0]];
     switch (
@@ -74,4 +75,4 @@ module.exports = class SubcommandsCommand extends SlashCommand {
     }
     return `Subcommand: \`${returnStringValues[0]}\`\nOption: \`${returnStringValues[1]}\`\nValue of option: \`${returnStringValues[2]}\``;
   }
-};
+}

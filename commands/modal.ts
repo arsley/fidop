@@ -1,7 +1,14 @@
-const { SlashCommand, CommandOptionType, ComponentType, TextInputStyle } = require('slash-create');
+import {
+  SlashCommand,
+  SlashCreator,
+  CommandContext,
+  CommandOptionType,
+  ComponentType,
+  TextInputStyle
+} from 'slash-create';
 
-module.exports = class ModalCommand extends SlashCommand {
-  constructor(creator) {
+export default class ModalCommand extends SlashCommand {
+  constructor(creator: SlashCreator) {
     super(creator, {
       name: 'modal',
       description: 'Send a cool modal.'
@@ -10,7 +17,7 @@ module.exports = class ModalCommand extends SlashCommand {
     this.filePath = __filename;
   }
 
-  async run(ctx) {
+  async run(ctx: CommandContext) {
     // You can send a modal this way
     // Keep in mind providing a callback is optional, but no callback requires the custom_id to be defined.
     ctx.sendModal(
@@ -48,4 +55,4 @@ module.exports = class ModalCommand extends SlashCommand {
       }
     );
   }
-};
+}

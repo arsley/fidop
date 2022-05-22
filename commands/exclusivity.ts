@@ -1,7 +1,7 @@
-const { SlashCommand, ApplicationCommandPermissionType } = require('slash-create');
+import { SlashCommand, SlashCreator, CommandContext, ApplicationCommandPermissionType } from 'slash-create';
 
-module.exports = class ExclusivityCommand extends SlashCommand {
-  constructor(creator) {
+export default class ExclusivityCommand extends SlashCommand {
+  constructor(creator: SlashCreator) {
     super(creator, {
       name: 'exclusivity',
       description: 'Only people who manage the guild can use this command.',
@@ -14,7 +14,7 @@ module.exports = class ExclusivityCommand extends SlashCommand {
     this.filePath = __filename;
   }
 
-  async run(ctx) {
+  async run(ctx: CommandContext) {
     return 'You can manage this guild!';
   }
-};
+}
