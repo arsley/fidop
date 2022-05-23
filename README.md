@@ -1,13 +1,17 @@
-# ron-bot for Discord
+<div align="center">
+
+<img src="/fidop.png" height="350">
+
+Fidop (Fukai Iyashi Doubutsu Ohirune Package, /fài-dop/)
 
 身内向け /command (スラッシュコマンド) 特化Discord Bot。
+</div>
+
+## Contribute
 
 - Powered by [slash-create](https://github.com/Snazzah/slash-create)
   - TypeScript
 - Deployed to Vercel
-
-## Contribute
-
 - Node.js (v16:arrow_up:)
 - yarn
 
