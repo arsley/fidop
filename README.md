@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="/fidop.png">
+<img src="/fidop.png" height="350">
 
 Fidop (Fukai Iyashi Doubutsu Ohirune Package, /fài-dop/)
 
@@ -87,4 +87,3 @@ TokenとかAppIDとかは都度管理者に聞いてください。
 
 - Base Template Repo: https://github.com/Snazzah/slash-create-vercel
 - slash-create Documentation: https://slash-create.js.org/#/docs/main/latest/general/welcome
-
