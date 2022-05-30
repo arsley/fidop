@@ -8,61 +8,16 @@ export default class ChoiceCommand extends SlashCommand {
       options: [
         {
           type: CommandOptionType.STRING,
-          name: '1',
-          description: '1st option',
+          name: 'choices',
+          description: '選択肢を 半角スペース または カンマ 区切りで入力',
           required: true
-        },
-        {
-          type: CommandOptionType.STRING,
-          name: '2',
-          description: '2nd option'
-        },
-        {
-          type: CommandOptionType.STRING,
-          name: '3',
-          description: '3rd option'
-        },
-        {
-          type: CommandOptionType.STRING,
-          name: '4',
-          description: '4th option'
-        },
-        {
-          type: CommandOptionType.STRING,
-          name: '5',
-          description: '5th option'
-        },
-        {
-          type: CommandOptionType.STRING,
-          name: '6',
-          description: '6th option'
-        },
-        {
-          type: CommandOptionType.STRING,
-          name: '7',
-          description: '7th option'
-        },
-        {
-          type: CommandOptionType.STRING,
-          name: '8',
-          description: '8th option'
-        },
-        {
-          type: CommandOptionType.STRING,
-          name: '9',
-          description: '9th option'
-        },
-        {
-          type: CommandOptionType.STRING,
-          name: '10',
-          description: '10th option'
         }
       ]
     });
   }
 
   async run(ctx: CommandContext) {
-    const choices: Array<string> = Object.values(ctx.options);
+    const choices: Array<string> = ctx.options.split(/[\s,]+/);
     const getRandomInt = (max: number) => Math.floor(Math.random() * max);
 
     const mantenProb = getRandomInt(100);
