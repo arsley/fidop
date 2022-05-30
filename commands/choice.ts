@@ -17,7 +17,7 @@ export default class ChoiceCommand extends SlashCommand {
   }
 
   async run(ctx: CommandContext) {
-    const choices: Array<string> = ctx.options.split(/[\s,]+/);
+    const choices: Array<string> = ctx.options.choices.split(/[\s,]+/);
     const getRandomInt = (max: number) => Math.floor(Math.random() * max);
 
     const mantenProb = getRandomInt(100);
