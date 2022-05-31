@@ -3,18 +3,17 @@
 ## TL;DR
 
 1. Discord Dev Portal にて...
-  1. Application 作る
-  2. Bot 作る
-  3. 作った Bot を動作確認したい鯖へ招待
-  4. 各種トークンを控える
-  5. トークンを `.env` へセット
-2. Vercel へ GitHub アカウント使って sign up
-3. `yarn` する
-4. `yarn dev:serve` して CLI から Vercel のログイン済ませる & 実行環境整える
-5. 実装が進んだら...
-  1. Discord Dev Portal の Interactions Endpoint URL に localtunnel の URL + `/api/interactions` をセット
-  2. `yarn dev:sync` でコマンドの有効化
-  3. Discord から投げる
+    1. Application 作る [↓](#create-app)
+    1. Bot 作る [↓](#create-bot)
+    1. 作った Bot を動作確認したい鯖へ招待 [↓](#invite-app)
+    1. 各種トークンを控える & トークンを `.env` へセット [↓](#set-tokens)
+1. Vercel へ GitHub アカウント使って sign up [↓](#vercel-sign-up)
+1. `yarn` する [↓](#install-deps)
+1. `yarn dev:serve` して CLI から Vercel のログイン済ませる & 実行環境整える [↓](#run-vercel-dev)
+1. 実装が進んだら... [↓](#work--check)
+    1. Discord Dev Portal の Interactions Endpoint URL に localtunnel の URL + `/api/interactions` をセット [↓](#set-endpoint)
+    1. `yarn dev:sync` でコマンドの有効化 [↓](#sync-commands)
+    1. Discord から投げる [↓](#check)
 
 ## Content
 
@@ -28,6 +27,7 @@
 
 ![](img/1-2.png)
 
+[↑top↑](#tldr)
 
 ### Create Bot
 
@@ -39,6 +39,8 @@
 "Public bot" の項目はOFFにする。
 
 ![](img/2-2.png)
+
+[↑top↑](#tldr)
 
 ### Invite Bot
 
@@ -53,6 +55,8 @@
 挙動確認用のサーバなり適当な場所へ招待しておく。
 
 ![](img/3-2.png)
+
+[↑top↑](#tldr)
 
 ### Set tokens
 
@@ -78,14 +82,20 @@ Discord 上からサーバ名を右クリック→「IDをコピー」から取�
 
 ![](img/4-3.png)
 
+[↑top↑](#tldr)
+
 ### Vercel sign-up
 
 https://vercel.com/ の "Sign Up" から "Continue with GitHub" を選択して Vercel のアカウントを作る。
 特にこだわりがなければ設定は必要ない。
 
+[↑top↑](#tldr)
+
 ### Install deps
 
 必要な依存を `yarn` でインストールする。
+
+[↑top↑](#tldr)
 
 ### Run `vercel dev`
 
@@ -119,6 +129,8 @@ $ tsc
 # ctrl-c で停止する
 ```
 
+[↑top↑](#tldr)
+
 ### Work & check
 
 `yarn start` で `vercel dev` と `localtunnel` をまとめて実行できる。
@@ -149,6 +161,8 @@ $ tsc
 # Ctrl-C で停止
 ```
 
+[↑top↑](#tldr)
+
 #### Set endpoint
 
 実装が一段落したら `yarn start` で実行される `localtunnel` が提供するエンドポイントをコピーする。
@@ -161,10 +175,16 @@ $ tsc
 
 "Save Changes" を押してエラーが表示されなければ疎通成功。
 
+[↑top↑](#tldr)
+
 #### Sync commands
 
 セット後、コンソールから `yarn sync:dev` を実行してコマンドをDiscordへ反映する。
 
+[↑top↑](#tldr)
+
 #### Check
 
 Discord から任意の /command を実行して挙動を確認する。
+
+[↑top↑](#tldr)
