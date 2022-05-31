@@ -5,7 +5,7 @@
 1. Discord Dev Portal にて...
     1. Application 作る [↓](#create-app)
     1. Bot 作る [↓](#create-bot)
-    1. 作った Bot を動作確認したい鯖へ招待 [↓](#invite-app)
+    1. 作った Bot を動作確認したい鯖へ招待 [↓](#invite-bot)
     1. 各種トークンを控える & トークンを `.env` へセット [↓](#set-tokens)
 1. Vercel へ GitHub アカウント使って sign up [↓](#vercel-sign-up)
 1. `yarn` する [↓](#install-deps)
