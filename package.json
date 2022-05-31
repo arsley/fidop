@@ -4,9 +4,12 @@
   "description": "A template for slash-create in Vercel",
   "private": true,
   "scripts": {
-    "sync": "slash-up sync",
-    "sync:dev": "slash-up sync -e development",
+    "start": "concurrently \"npm:dev:serve\" \"npm:dev:tunnel\"",
+    "dev:serve": "vercel dev -l 8080",
+    "dev:tunnel": "lt -p 8080 --print-requests",
     "build": "tsc",
+    "sync": "slash-up sync -d",
+    "sync:dev": "slash-up sync -e development",
     "lint": "npx eslint --ext .ts .",
     "lint:fix": "npx eslint --ext .ts . --fix"
   },
@@ -18,11 +21,14 @@
     "@typescript-eslint/eslint-plugin": "^4.31.0",
     "@typescript-eslint/parser": "^4.31.0",
     "@vercel/node": "^1.12.1",
+    "concurrently": "^7.2.1",
     "eslint": "^7.15.0",
     "eslint-config-prettier": "^7.0.0",
     "eslint-plugin-prettier": "^3.3.0",
+    "localtunnel": "^2.0.2",
     "prettier": "^2.2.1",
     "slash-up": "^1.0.10",
-    "typescript": "^4.4.2"
+    "typescript": "^4.4.2",
+    "vercel": "^24.2.4"
   }
 }
