@@ -9,7 +9,7 @@ export const creator = new SlashCreator({
   token: process.env.DISCORD_BOT_TOKEN
 });
 
-creator.withServer(new VercelServer()).registerCommandsIn(path.join(__dirname, '..', 'commands'));
+creator.withServer(new VercelServer()).registerCommandsIn(path.join(__dirname, '..', 'commands'), ['.ts', '.js']);
 
 creator.on('warn', (message) => console.warn(message));
 creator.on('error', (error) => console.error(error));

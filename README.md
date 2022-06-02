@@ -77,11 +77,9 @@ Commands
 
 TokenとかAppIDとかは都度管理者に聞いてください。
 
-## Check on local
+## Development guide
 
-:construction: WIP :construction:
-
-(`npx slash-up sync` とかがそれっぽいけど実行ができないので模索中。)
+[Development Guide](docs/development.md)を参照。
 
 ## References
 
